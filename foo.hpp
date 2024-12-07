@@ -14,15 +14,10 @@ std::vector< char > foo(std::list< Human >& people)
     std::transform(people.rbegin(), people.rend(),it, [](Human& person){
         person.birthday();
 
-        if(person.isMonster())
-        {
-            return 'n';
-        }
-        else
-        {
-            return 'y';
-        }
+        return person.isMonster() ? 'n' : 'y';
     });
+
+    
 
     return retval;
 }
